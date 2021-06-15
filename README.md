@@ -41,3 +41,11 @@
 |:-------|:-------|:----------|
 |appraised_value|23937 non-null: int64|tax assessed value of property in dollars($)|
 
+|Feature|Datatype|Description|
+|:-------|:-------|:----------|
+|insert|insert|insert|
+
+### Initial Hypothesis:
+- Hypothosis 1 - 
+- $
+
