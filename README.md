@@ -46,6 +46,72 @@
 |insert|insert|insert|
 
 ### Initial Hypothesis:
-- Hypothosis 1 - 
-- $
+- Hypothosis 1:
+    - alpha: 0.05
+    - $H_O$: The age of the home has no impact on the appraised value, (they are independent variables.)
+    - $H_a$: The age of the home has an impact on the appraised value, (they are dependent variables.)
+- Hypothosis 2:
+    - alpha: 0.05
+    - $H_O$: The mean appraised value of single unit properties with one bathroom is the same for those with more than one bathroom; (they are independent variables.)
+    - $H_a$: The mean appraised value of single unit properties with one bathroom is less than those with more than one bathroom; (they are dependent variables.)
+    
+### Executive Summary:
 
+## Stages of DS Pipeline
+Plan -> Data Acquisition -> Data Prep -> Exploratory Analysis -> ML Models -> Delivery
+
+### Planning
+- [] Create README.md with data dictionary, project and business goals, come up with initial hypotheses.
+- [] Acquire data from the Codeup Database and create a series of functions to automate this process. Save the functions in an acquire.py file to import into the Final Report Notebook.
+- [] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a series of functions to automate the process, store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the funtions.
+- []  Clearly define two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
+- [] Establish a baseline accuracy and document well.
+- [] Train three different regression models.
+- [] Evaluate models on train and validate datasets.
+- [] Choose the model with that performs the best and evaluate that single model on the test dataset.
+- [] Add columns to the DataFrame to show the county and state of each property
+- [] Document conclusions, takeaways, and next steps in the Final Report Notebook.
+
+### Data Acquistion
+- [] Store functions that are needed to acquire data from the zillow database on the Codeup data science database server; make sure the acquire.py module contains the necessary imports to run my code.
+- [] The final function will return a pandas DataFrame.
+- [] Import the acquire function from the acquire.py module and use it to acquire the data in the Final Report Notebook.
+- [] Complete some initial data summarization (`.info()`, `.describe()`, `.value_counts()`, `.nunique()`, ...).
+
+### Data Prep
+- []  Store functions needed to prepare the zillow data; make sure the module contains the necessary imports to run the code. The final function should do the following:
+    - Split the data into train/validate/test.
+    - Handle any missing values.
+    - Handle erroneous data and/or outliers that need addressing.
+    - Encode variables as needed.
+    - Create any new features, if made for this project.
+- []  Import the prepare function from the prepare.py module and use it to prepare the data in the Final Report Notebook.
+
+### Exploratory Analysis
+- [] Scale continuous data to get more accurate statistical testing
+- [] Answer key questions, my hypotheses, and figure out the features that can be used in a regression model to best predict the target variable, appraised_value. 
+- [] Run at least 2 statistical tests in data exploration. Document my hypotheses, set an alpha before running the tests, and document the findings well.
+- [] Create visualizations and run statistical tests that work toward discovering variable relationships (independent with independent and independent with dependent). The goal is to identify features that are related to appraised_value (the target), identify any data integrity issues, and understand 'how the data works'. If there appears to be some sort of interaction or correlation, assume there is no causal relationship and brainstorm (and document) ideas on reasons there could be correlation.
+- [] Summarize my conclusions, provide clear answers to my specific questions, and summarize any takeaways/action plan from the work above.
+
+### ML Models
+- [] Establish a baseline accuracy to determine if having a model is better than no model and train and compare at least 3 different models. Document these steps well.
+- [] Train (fit, transform, evaluate) multiple models, varying the algorithm and/or hyperparameters you use.
+- [] Compare evaluation metrics across all the models you train and select the ones you want to evaluate using your validate dataframe.
+- [] Feature Selection (after initial iteration through pipeline): Are there any variables that seem to provide limited to no additional information? If so, remove them.
+- [] Based on the evaluation of the models using the train and validate datasets, choose the best model to try with the test data, once.
+- [] Test the final model on the out-of-sample data (the testing dataset), summarize the performance, interpret and document the results.
+
+### Delivery
+> - Introduce myself and my project goals at the very beginning of my slide presentation.
+> - Provide an Executive Summary to highlight the 'one big thing.' 
+> - Walk Zillow Data Science Team through the analysis I did to answer my questions and that lead to my findings. (Visualize relationships and Document takeaways.) 
+> - Clearly call out the questions and answers I am analyzing as well as offer insights and recommendations based on my findings.
+
+## How to Reproduce this Project
+> - You will need your own env file with credentials for the database, along with these files to recreate my project:
+    > - README.md
+    > - acquire.py
+    > - prepare.py
+    > - explore.py
+    > - run the final_report.ipynb notebook

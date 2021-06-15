@@ -6,6 +6,8 @@
 import pandas as pd
 import numpy as np
 import os
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 ############### Connection #####################################################
 
@@ -41,7 +43,7 @@ def new_zillow_data():
                     FROM properties_2017
                     JOIN predictions_2017 USING (parcelid)
                     WHERE transactiondate BETWEEN "2017-05-01" AND "2017-08-31"
-                    AND propertylandusetypeid IN 261
+                    AND propertylandusetypeid IN (260, 261, 262, 263, 279)
                     '''
     
     # reads SQL query into a DataFrame            
@@ -67,3 +69,24 @@ def get_zillow_data():
         df.to_csv('zillow.csv')
 
     return df
+
+def overview(df):
+    '''
+    This function returns the shape and info of the df. It also includes a breakdown of the number of unique values
+    in each column to determine which are categorical/discrete, and which are numerical/continuous. Finally, it returns
+    a breakdown of the statistics on all numerica columns.
+    '''
+    print(f'This dataframe has {df.shape[0]} rows and {df.shape[1]} columns.')
+    print('----------------------------------')
+    print('')
+    print(df.info())
+    print('----------------------------------')
+    print('')
+    print('Unique value counts of each column')
+    print('')
+    print(df.nunique())
+    print('----------------------------------')
+    print('')
+    print('Stats on Numeric Columns')
+    print('')
+    print(df.describe())

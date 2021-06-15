@@ -28,3 +28,16 @@ def explore_univariate(df, figsize = (18,3)):
         sns.histplot(data = df, x = col, kde=True)
         plt.title(f'Distribution of {col}')
         plt.show()
+        
+def zillow_heat(df):
+    '''
+    This function returns a heatmap of the chosen columns from the train DataFrame.
+    '''
+    # correlation matrix
+    zillow_corr = df.drop(columns=['appraised_value', 'tax_amount', 'fips', 'yearbuilt']).corr()
+    
+    # plot the heatmap
+    plt.figure(figsize=(8,6))
+    sns.heatmap(zillow_corr, cmap='Purples', annot=True, linewidth=0.5, mask= np.triu(zillow_corr))
+    plt.show()
+    
