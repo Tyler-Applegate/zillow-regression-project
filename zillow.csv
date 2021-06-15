@@ -1,4 +1,4 @@
-,parcel_id,bath,bed,sqft_calc,fips,yearbuilt,taxvaluedollarcnt,tax_amount
+,parcel_id,bath,bed,sqft_calc,fips,yearbuilt,appraised_value,tax_amount
 0,11721753,2.0,3.0,1316.0,6037.0,1923.0,205123.0,2627.48
 1,11289917,2.0,3.0,1458.0,6037.0,1970.0,136104.0,2319.9
 2,11705026,1.0,2.0,1421.0,6037.0,1911.0,35606.0,543.69

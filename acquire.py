@@ -41,7 +41,7 @@ def new_zillow_data():
                     FROM properties_2017
                     JOIN predictions_2017 USING (parcelid)
                     WHERE transactiondate BETWEEN "2017-05-01" AND "2017-08-31"
-                    AND propertylandusetypeid IN (261)
+                    AND propertylandusetypeid IN 261
                     '''
     
     # reads SQL query into a DataFrame            
