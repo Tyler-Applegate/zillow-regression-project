@@ -43,14 +43,21 @@
 
 |Feature|Datatype|Description|
 |:-------|:-------|:----------|
-|insert|insert|insert|
+|parcel_id|int64|unique identifier for each home, set as index|
+|bath|float|number of bathrooms|
+|bed|int64|number of bedrooms|
+|sqft_calc|int64|square feet of property|
+|fips|int64|Federal Information Processing Standards, unique county code|
+|yearbuilt|int64|year property was built|
+|tax_amount|float|actual taxes on property in dollars and cents|
+|age|int64|how old the property is in years|
 
 ### Initial Hypothesis:
-- Hypothosis 1:
+- Hypothosis 1: We reject the null hypothesis.
     - alpha: 0.05
     - $H_O$: The age of the home has no impact on the appraised value, (they are independent variables.)
     - $H_a$: The age of the home has an impact on the appraised value, (they are dependent variables.)
-- Hypothosis 2:
+- Hypothosis 2: We reject the null hypothesis.
     - alpha: 0.05
     - $H_O$: The mean appraised value of single unit properties with one bathroom is the same for those with more than one bathroom; (they are independent variables.)
     - $H_a$: The mean appraised value of single unit properties with one bathroom is less than those with more than one bathroom; (they are dependent variables.)

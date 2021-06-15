@@ -34,7 +34,7 @@ def zillow_heat(df):
     This function returns a heatmap of the chosen columns from the train DataFrame.
     '''
     # correlation matrix
-    zillow_corr = df.drop(columns=['appraised_value', 'tax_amount', 'fips', 'yearbuilt']).corr()
+    zillow_corr = df.drop(columns=['appraised_value', 'fips', 'yearbuilt']).corr()
     
     # plot the heatmap
     plt.figure(figsize=(8,6))

@@ -92,6 +92,9 @@ def zillow_split(df, target):
     This function take in the zillow DataFrame after it has gone through prep_zillow,
     and splits into train, validate, and test X_df(features) and y (target).
     '''
+    # first we need to drop 'tax_amount'
+    df = df.drop(columns='tax_amount')
+    
     train_validate, test = train_test_split(df, test_size=.2, 
                                         random_state=1221)
     train, validate = train_test_split(train_validate, test_size=.3, 
